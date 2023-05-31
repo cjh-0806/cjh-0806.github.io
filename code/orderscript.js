@@ -11,21 +11,21 @@ var dialog = document.querySelector("#dialog");
 
 var CusRandom = 0;
 var bodyBgs = [];  //图片地址
-bodyBgs[0] = "../image/customer1.png";
-bodyBgs[1] = "../image/customer2.png";
-bodyBgs[2] = "../image/customer3.png";
+bodyBgs[0] = "image/customer1.png";
+bodyBgs[1] = "image/customer2.png";
+bodyBgs[2] = "image/customer3.png";
 
 var ingredients = [];  //图片地址
-ingredients[0] = "../image/bbq.png";
-ingredients[1] = "../image/cheese.png";
-ingredients[2] = "../image/cucumber.png";
-ingredients[3] = "../image/egg.png";
-ingredients[4] = "../image/meat3.png";
-ingredients[5] = "../image/mstd.png";
-ingredients[6] = "../image/onion.png";
-ingredients[7] = "../image/tmt.png";
-ingredients[8] = "../image/tomato.png";
-ingredients[9] = "../image/veg.png";
+ingredients[0] = "image/bbq.png";
+ingredients[1] = "image/cheese.png";
+ingredients[2] = "image/cucumber.png";
+ingredients[3] = "image/egg.png";
+ingredients[4] = "image/meat3.png";
+ingredients[5] = "image/mstd.png";
+ingredients[6] = "image/onion.png";
+ingredients[7] = "image/tmt.png";
+ingredients[8] = "image/tomato.png";
+ingredients[9] = "image/veg.png";
 
 var ticketBurgertop = document.querySelector("#ticketBurgertop");
 var ticketBurgerbtm = document.querySelector("#ticketBurgerbtm");
@@ -128,6 +128,6 @@ tkod.onclick = function () {
     });
     ticketBurgerbtm.addEventListener("animationend", function () {
         dialog.style.display = "none";
-        nextBtn.src = "../image/next.png"; changePage = 1;
+        nextBtn.src = "image/next.png"; changePage = 1;
     });
 }

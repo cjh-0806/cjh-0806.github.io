@@ -12,24 +12,24 @@ var pointerli = document.getElementById("pointer").getElementsByTagName("li");
 
 for(var i = 0; i < meatli.length; ++i) {
     //初始化12个肉饼位置
-    meatli[i].innerHTML = '<div> <img src="../image/meat1.png" id="meatImg'+String(i)+'"></div>';
+    meatli[i].innerHTML = '<div> <img src="image/meat1.png" id="meatImg'+String(i)+'"></div>';
     meatli[i].style.left = 130 + i % 3 * 120 + 'px';
     meatli[i].style.top = 105 + parseInt(i/3) * 80 +'px';
     meatli[i].style.display = 'none';
     meatli[i].state = 0; //0：没有肉饼 1：未熟 2：熟一半 3：全熟 4：糊了
     meatli[i].second = 0; //肉饼烤的秒数
     //初始化12个肉汁位置
-    juiceli[i].innerHTML = '<div> <img src="../image/meatjuice.gif" id="juiceImg'+String(i)+'"></div>';
+    juiceli[i].innerHTML = '<div> <img src="image/meatjuice.gif" id="juiceImg'+String(i)+'"></div>';
     juiceli[i].style.left = 116 + i % 3 * 120 + 'px';
     juiceli[i].style.top = 110 + parseInt(i/3) * 80 +'px';
     juiceli[i].style.display = 'none';
     //初始化12个钟表位置
-    clockli[i].innerHTML = '<div> <img src="../image/clock.png" id="clockImg'+String(i)+'"></div>';
+    clockli[i].innerHTML = '<div> <img src="image/clock.png" id="clockImg'+String(i)+'"></div>';
     clockli[i].style.left = 235 + i % 3 * 120 + 'px';
     clockli[i].style.top = 110 + parseInt(i/3) * 80 +'px';
     clockli[i].style.display = 'none';
     //初始化12个钟表指针的位置
-    pointerli[i].innerHTML = '<div> <img src="../image/pointer.png" id="pointerImg'+String(i)+'"></div>';
+    pointerli[i].innerHTML = '<div> <img src="image/pointer.png" id="pointerImg'+String(i)+'"></div>';
     pointerli[i].style.left = 235 + i % 3 * 120 + 'px';
     pointerli[i].style.top = 110 + parseInt(i/3) * 80 +'px';
     pointerli[i].style.display = 'none';
@@ -71,7 +71,7 @@ for(var i = 0; i < meatli.length; ++i) {
                     if(cookingMeat == 0) {
                         grillburgerMusic.pause();
                         if(cookedMeat > 0) {
-                            nextBtn.src = "../image/next.png";
+                            nextBtn.src = "image/next.png";
                             changePage = 1;
                         }
                     }
@@ -81,8 +81,8 @@ for(var i = 0; i < meatli.length; ++i) {
                     meatli[j].style.display = 'none';
                     meatli[j].state = 0, meatli[j].second = 0;
                     clearInterval(meatli[j].timeId);
-                    document.getElementById("meatImg"+String(j)).src = "../image/meat1.png";
-                    document.getElementById("juiceImg"+String(j)).src = "../image/juicedisappear.gif";
+                    document.getElementById("meatImg"+String(j)).src = "image/meat1.png";
+                    document.getElementById("juiceImg"+String(j)).src = "image/juicedisappear.gif";
                     pointerli[j].angle = 0;
                     pointerli[j].style.transform = `rotate(0deg)`;
                 }
@@ -119,9 +119,9 @@ somemeat.onmousedown = function(e) {
     //var index = 0; //meatImg下标
     var flag = 0; //是否有肉饼放下的标志
     //鼠标按下时
-    somemeat.src = "../image/meatup.gif";
+    somemeat.src = "image/meatup.gif";
     var newMeat = document.createElement("li");
-    newMeat.innerHTML = '<div> <img src="../image/meat1.png"></div>';
+    newMeat.innerHTML = '<div> <img src="image/meat1.png"></div>';
     meats.appendChild(newMeat);
     newMeat.style.left = '10px';
     newMeat.style.top = '310px';
@@ -220,14 +220,14 @@ somemeat.onmousedown = function(e) {
             newMeat.addEventListener("animationend", function () {
                 newMeat.remove();
             });
-            somemeat.src = "../image/meatdown.gif";
+            somemeat.src = "image/meatdown.gif";
         }
         else //有肉在烤
         {
             newMeat.remove();
             landburgerMusic.play();
             cookingMeat++;
-            nextBtn.src = "../image/next0.png";
+            nextBtn.src = "image/next0.png";
             changePage = 0;
         }
         document.onmousemove = null;
@@ -250,18 +250,18 @@ function addTimer(index) {
         pointerli[index].angle += 18;
         pointerli[index].style.transform = `rotate(${pointerli[index].angle}deg)`;
         if(meatli[index].second == 5) {
-            document.getElementById("meatImg"+String(index)).src = "../image/meat2.png";
+            document.getElementById("meatImg"+String(index)).src = "image/meat2.png";
             meatli[index].state = 2;
-            document.getElementById("juiceImg"+String(index)).src = "../image/meatjuice.gif";
+            document.getElementById("juiceImg"+String(index)).src = "image/meatjuice.gif";
             juiceli[index].style.display = 'block';
             grillburgerMusic.play();
         }
         else if(meatli[index].second == 10) {
-            document.getElementById("meatImg"+String(index)).src = "../image/meat3.png";
+            document.getElementById("meatImg"+String(index)).src = "image/meat3.png";
             meatli[index].state = 3;
         }
         else if(meatli[index].second == 15) {
-            document.getElementById("meatImg"+String(index)).src = "../image/meat4.png";
+            document.getElementById("meatImg"+String(index)).src = "image/meat4.png";
             meatli[index].state = 4;
         }
     }, 1000);

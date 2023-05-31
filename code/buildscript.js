@@ -45,7 +45,7 @@ tmts.onmousedown = function(e){
             //判断落点是否合法
             if(tmts.offsetLeft + 415 - li.offsetLeft <= 20 && tmts.offsetLeft + 415 - li.offsetLeft >= -20) {
                 tmt.style.display = "block";
-                tmt.src = "../image/tmt.gif";
+                tmt.src = "image/tmt.gif";
                 //设置番茄酱落点
                 tmt.style = "z-index:" + String(count);
                 tmt.style.left = tmts.offsetLeft + 415 + 'px';
@@ -55,10 +55,10 @@ tmts.onmousedown = function(e){
                 var tmts1 = document.createElement("li");
                 //播放gif定时器
                 let imgTimeout = setTimeout(function(){
-                    tmt.src = "../image/tmt.png";
+                    tmt.src = "image/tmt.png";
                     tmt.style.display = "none";
-                    tmts1.innerHTML = '<div> <img src="../image/tmt.png"></div>';
-                    tmts1.src = "../image/tmt.png";
+                    tmts1.innerHTML = '<div> <img src="image/tmt.png"></div>';
+                    tmts1.src = "image/tmt.png";
                     count = count + 1;
                     tmts1.style = "z-index:" + String(count);
                     tmts1.style.left = tmt.style.left;
@@ -118,7 +118,7 @@ mstds.onmousedown = function(e){
             //判断落点是否合法
             if(mstds.offsetLeft + 415 - li.offsetLeft <= 20 && mstds.offsetLeft + 415 - li.offsetLeft >= -20) {
                 mstd.style.display = "block";
-                mstd.src = "../image/mstd.gif";
+                mstd.src = "image/mstd.gif";
                 //设置芥末酱落点
                 mstd.style = "z-index:" + String(count);
                 mstd.style.left = mstds.offsetLeft + 415 + 'px';
@@ -128,10 +128,10 @@ mstds.onmousedown = function(e){
                 var mstds1 = document.createElement("li");
                 //播放gif定时器
                 let imgTimeout = setTimeout(function(){
-                    mstd.src = "../image/mstd.png";
+                    mstd.src = "image/mstd.png";
                     mstd.style.display = "none";
-                    mstds1.innerHTML = '<div> <img src="../image/mstd.png"></div>';
-                    mstds1.src = "../image/mstd.png";
+                    mstds1.innerHTML = '<div> <img src="image/mstd.png"></div>';
+                    mstds1.src = "image/mstd.png";
                     count = count + 1;
                     mstds1.style = "z-index:" + String(count);
                     mstds1.style.left = mstd.style.left;
@@ -190,7 +190,7 @@ eggs.onmousedown = function(e){
             //判断落点是否合法
             if(eggs.offsetLeft + 415 - li.offsetLeft <= 20 && eggs.offsetLeft + 415 - li.offsetLeft >= -20) {
                 egg.style.display = "block";
-                egg.src = "../image/egg.gif";
+                egg.src = "image/egg.gif";
                 //设置蛋黄酱落点
                 egg.style = "z-index:" + String(count);
                 egg.style.left = eggs.offsetLeft + 415 + 'px';
@@ -200,10 +200,10 @@ eggs.onmousedown = function(e){
                 var eggs1 = document.createElement("li");
                 //播放gif定时器
                 let imgTimeout = setTimeout(function(){
-                    egg.src = "../image/egg.png";
+                    egg.src = "image/egg.png";
                     egg.style.display = "none";
-                    eggs1.innerHTML = '<div> <img src="../image/egg.png"></div>';
-                    eggs1.src = "../image/egg.png";
+                    eggs1.innerHTML = '<div> <img src="image/egg.png"></div>';
+                    eggs1.src = "image/egg.png";
                     count = count + 1;
                     eggs1.style = "z-index:" + String(count);
                     eggs1.style.left = egg.style.left;
@@ -259,7 +259,7 @@ bbqs.onmousedown = function(e){
             var li = list[list.length - 1];
             if(bbqs.offsetLeft + 415 - li.offsetLeft <= 20 && bbqs.offsetLeft + 415 - li.offsetLeft >= -20) {
                 bbq.style.display = "block";
-                bbq.src = "../image/bbq.gif";
+                bbq.src = "image/bbq.gif";
                 //设置烧烤酱落点
                 bbq.style = "z-index:" + String(count);
                 bbq.style.left = bbqs.offsetLeft + 415 + 'px';
@@ -269,10 +269,10 @@ bbqs.onmousedown = function(e){
                 var bbqs1 = document.createElement("li");
                 //播放gif定时器
                 let imgTimeout = setTimeout(function(){
-                    bbq.src = "../image/bbq.png";
+                    bbq.src = "image/bbq.png";
                     bbq.style.display = "none";
-                    bbqs1.innerHTML = '<div> <img src="../image/bbq.png"></div>';
-                    bbqs1.src = "../image/bbq.png";
+                    bbqs1.innerHTML = '<div> <img src="image/bbq.png"></div>';
+                    bbqs1.src = "image/bbq.png";
                     count = count + 1;
                     bbqs1.style = "z-index:" + String(count);
                     bbqs1.style.left = bbq.style.left;
@@ -301,7 +301,7 @@ burgerbtm.onmousedown = function(e){
     count = count+1;
     var burgerbtm1 = document.createElement("li");
     burgerbtm1.style = "z-index:" + String(count);
-    burgerbtm1.innerHTML = '<div class="burgerbtm1"> <img src="../image/burgerbtm.png"></div>';
+    burgerbtm1.innerHTML = '<div class="burgerbtm1"> <img src="image/burgerbtm.png"></div>';
     burgerbtms.appendChild(burgerbtm1);
     var event = e || window.event; //兼容性写法
     //鼠标相对于图片的位置
@@ -354,8 +354,8 @@ cheese.onmousedown = function(e){
     count = count+1;
     var cheese1 = document.createElement("li");
     cheese1.style = "z-index:" + String(count);
-    cheese1.innerHTML = '<div class="cheese1"> <img src="../image/cheese.png"></div>';
-    cheese1.src = "../image/cheese.png";
+    cheese1.innerHTML = '<div class="cheese1"> <img src="image/cheese.png"></div>';
+    cheese1.src = "image/cheese.png";
     cheeses.appendChild(cheese1);
     var event = e || window.event; //兼容性写法
     //鼠标相对于图片的位置
@@ -405,8 +405,8 @@ cucumber.onmousedown = function(e){
     count = count+1;
     var cucumber1 = document.createElement("li");
     cucumber1.style = "z-index:" + String(count);
-    cucumber1.innerHTML = '<div class="cucumber1"> <img src="../image/cucumber.png"></div>';
-    cucumber1.src = "../image/cucumber.png";
+    cucumber1.innerHTML = '<div class="cucumber1"> <img src="image/cucumber.png"></div>';
+    cucumber1.src = "image/cucumber.png";
     cucumbers.appendChild(cucumber1);
     var event = e || window.event; //兼容性写法
     //鼠标相对于图片的位置
@@ -456,8 +456,8 @@ onion.onmousedown = function(e){
     count = count + 1;
     var onion1 = document.createElement("li");
     onion1.style = "z-index:" + String(count);
-    onion1.innerHTML = '<div class="onion1"> <img src="../image/onion.png"></div>';
-    onion1.src = "../image/onion.png";
+    onion1.innerHTML = '<div class="onion1"> <img src="image/onion.png"></div>';
+    onion1.src = "image/onion.png";
     onions.appendChild(onion1);
     var event = e || window.event; //兼容性写法
     //鼠标相对于图片的位置
@@ -507,8 +507,8 @@ veg.onmousedown = function(e){
     count = count + 1;
     var veg1 = document.createElement("li");
     veg1.style = "z-index:" + String(count);
-    veg1.innerHTML = '<div class="veg1"> <img src="../image/veg.png"></div>';
-    veg1.src = "../image/veg.png";
+    veg1.innerHTML = '<div class="veg1"> <img src="image/veg.png"></div>';
+    veg1.src = "image/veg.png";
     vegs.appendChild(veg1);
     var event = e || window.event; //兼容性写法
     //鼠标相对于图片的位置
@@ -558,8 +558,8 @@ tomato.onmousedown = function(e){
     count = count + 1;
     var tomato1 = document.createElement("li");
     tomato1.style = "z-index:" + String(count);
-    tomato1.innerHTML = '<div class="tomato1"> <img src="../image/tomato.png"></div>';
-    tomato1.src = "../image/tomato.png";
+    tomato1.innerHTML = '<div class="tomato1"> <img src="image/tomato.png"></div>';
+    tomato1.src = "image/tomato.png";
     tomatos.appendChild(tomato1);
     var event = e || window.event; //兼容性写法
     //鼠标相对于图片的位置
@@ -614,25 +614,25 @@ meatfired.onmousedown = function(e){
             meatfired.style.display = "none";
         else {
             if(cookedMeatArr[1] == 2)
-                meatfired.src = "../image/meat2.png";
+                meatfired.src = "image/meat2.png";
             else if(cookedMeatArr[1] == 3)
-                meatfired.src = "../image/meat3.png";
+                meatfired.src = "image/meat3.png";
             else if(cookedMeatArr[1] == 4)
-                meatfired.src = "../image/meat4.png";
+                meatfired.src = "image/meat4.png";
         }
         var meatfired1 = document.createElement("li");
         meatfired1.style = "z-index:" + String(count);
         if(cookedMeatArr[0] == 2) {
-            meatfired1.innerHTML = '<div class="meatfired1"> <img src="../image/meat2.png"></div>';
-            meatfired1.src = "../image/meat2.png";
+            meatfired1.innerHTML = '<div class="meatfired1"> <img src="image/meat2.png"></div>';
+            meatfired1.src = "image/meat2.png";
         }
         else if(cookedMeatArr[0] == 3) {
-            meatfired1.innerHTML = '<div class="meatfired1"> <img src="../image/meat3.png"></div>';
-            meatfired1.src = "../image/meat3.png";
+            meatfired1.innerHTML = '<div class="meatfired1"> <img src="image/meat3.png"></div>';
+            meatfired1.src = "image/meat3.png";
         }
         else if(cookedMeatArr[0] == 4) {
-            meatfired1.innerHTML = '<div class="meatfired1"> <img src="../image/meat4.png"></div>';
-            meatfired1.src = "../image/meat4.png";
+            meatfired1.innerHTML = '<div class="meatfired1"> <img src="image/meat4.png"></div>';
+            meatfired1.src = "image/meat4.png";
         }
         meatfireds.appendChild(meatfired1);
         var event = e || window.event; //兼容性写法
@@ -667,11 +667,11 @@ meatfired.onmousedown = function(e){
                     meatfired1.remove();
                     meatfired.style.display = "block";
                     if(cookedMeatArr[0] == 2)
-                        meatfired.src = "../image/meat2.png";
+                        meatfired.src = "image/meat2.png";
                     else if(cookedMeatArr[0] == 3)
-                        meatfired.src = "../image/meat3.png";
+                        meatfired.src = "image/meat3.png";
                     else if(cookedMeatArr[0] == 4)
-                        meatfired.src = "../image/meat4.png";
+                        meatfired.src = "image/meat4.png";
                 }
             }
             else
@@ -710,7 +710,7 @@ burgertop.onmousedown = function(e){
 
     var burgertop1 = document.createElement("li");
     burgertop1.style = "z-index:" + String(count);
-    burgertop1.innerHTML = '<div class="burgertop1"> <img src="../image/burgertop.png"></div>';
+    burgertop1.innerHTML = '<div class="burgertop1"> <img src="image/burgertop.png"></div>';
     burgertops.appendChild(burgertop1);
 
     var event = e || window.event; //兼容性写法
@@ -775,98 +775,98 @@ burgertop.onmousedown = function(e){
                             list[i].style.top = list[i].offsetTop - 50 + 'px';
                             list[i].style.left = list[i].offsetLeft - 170 + 'px';
                         }
-                        money.src = "../image/money"+String(score)+".png";
+                        money.src = "image/money"+String(score)+".png";
                         order.style.top = '220px';
                         order.style.left = '110px';
                         plate.style.left = plate.offsetLeft - 170 + 'px';
                         tickethere.style.left = tickethere.offsetLeft - 170 + 'px';
                         buildscreenMusic.pause();
                         waitMusic.play();
-                        coins.src = "../image/coins.gif";
+                        coins.src = "image/coins.gif";
                         let musicTimeout = setTimeout(function(){
                             if(score == 5)
                             {
                                 if(CusRandom == 0)
-                                    judger1.src = "../image/customer1_5.png";
+                                    judger1.src = "image/customer1_5.png";
                                 else if(CusRandom == 1)
-                                    judger1.src = "../image/customer2_5.png";
+                                    judger1.src = "image/customer2_5.png";
                                 else
-                                    judger1.src = "../image/customer3_5.png";
+                                    judger1.src = "image/customer3_5.png";
                                 judge5Music.play();
                                 money.style.display = "block";
-                                tips.src = "../image/tips.gif";
+                                tips.src = "image/tips.gif";
                                 coins.style.display = "block";
                                 multicoinMusic.play();
                             }
                             else if(score == 4)
                             {
                                 if(CusRandom == 0)
-                                    judger1.src = "../image/customer1_4.png";
+                                    judger1.src = "image/customer1_4.png";
                                 else if(CusRandom == 1)
-                                    judger1.src = "../image/customer2_4.png";
+                                    judger1.src = "image/customer2_4.png";
                                 else
-                                    judger1.src = "../image/customer3_4.png";
+                                    judger1.src = "image/customer3_4.png";
                                 judge4Music.play();
                                 money.style.display = "block";
-                                tips.src = "../image/tips.gif";
+                                tips.src = "image/tips.gif";
                                 coins.style.display = "block";
                                 multicoinMusic.play();
                             }
                             else if(score == 3)
                             {
                                 if(CusRandom == 0)
-                                    judger1.src = "../image/customer1_3.png";
+                                    judger1.src = "image/customer1_3.png";
                                 else if(CusRandom == 1)
-                                    judger1.src = "../image/customer2_3.png";
+                                    judger1.src = "image/customer2_3.png";
                                 else
-                                    judger1.src = "../image/customer3_3.png";
+                                    judger1.src = "image/customer3_3.png";
                                 judge3Music.play();
                                 money.style.display = "block";
-                                tips.src = "../image/tips.gif";
+                                tips.src = "image/tips.gif";
                                 coins.style.display = "block";
                                 multicoinMusic.play();
                             }
                             else if(score == 2)
                             {
                                 if(CusRandom == 0)
-                                    judger1.src = "../image/customer1_12.png";
+                                    judger1.src = "image/customer1_12.png";
                                 else if(CusRandom == 1)
-                                    judger1.src = "../image/customer2_12.png";
+                                    judger1.src = "image/customer2_12.png";
                                 else
-                                    judger1.src = "../image/customer3_12.png";
+                                    judger1.src = "image/customer3_12.png";
                                 judge2Music.play();
                                 money.style.display = "block";
-                                tips.src = "../image/tips.gif";
+                                tips.src = "image/tips.gif";
                                 coins.style.display = "block";
                                 singlecoinMusic.play();
                             }
                             else if(score == 1)
                             {
                                 if(CusRandom == 0)
-                                    judger1.src = "../image/customer1_12.png";
+                                    judger1.src = "image/customer1_12.png";
                                 else if(CusRandom == 1)
-                                    judger1.src = "../image/customer2_12.png";
+                                    judger1.src = "image/customer2_12.png";
                                 else
-                                    judger1.src = "../image/customer3_12.png";
+                                    judger1.src = "image/customer3_12.png";
                                 judge1Music.play();
                                 money.style.display = "block";
-                                tips.src = "../image/tips.gif";
+                                tips.src = "image/tips.gif";
                                 coins.style.display = "block";
                                 singlecoinMusic.play();
                             }
                             else
                             {
                                 if(CusRandom == 0)
-                                    judger1.src = "../image/customer1_0.png";
+                                    judger1.src = "image/customer1_0.png";
                                 else if(CusRandom == 1)
-                                    judger1.src = "../image/customer2_0.png";
+                                    judger1.src = "image/customer2_0.png";
                                 else
-                                    judger1.src = "../image/customer3_0.png";
+                                    judger1.src = "image/customer3_0.png";
                                 judge0Music.play();
                                 money.style.display = "block";
                             }
                             clearTimeout(musicTimeout);
-                            nextBtn.src = "../image/next.png";
+                            nextBtn.src = "image/next.png";
                             changePage = 1;
                         }, 3000)
                     },1000);
