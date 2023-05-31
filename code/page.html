@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa's burgeria</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 容器 */
+        #startcontainer, #ordercontainer, #cuscontainer, #grillcontainer, #buildcontainer{
+            width: 640px;
+            height: 480px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* 背景 */
+        #startbg, #orderbg, #grillbg, #cusorderbg, #stickticket, #judge{
+            position: absolute;
+            width: 640px;
+            height: 480px;
+            left: 0;
+            top: 0;
+        }
+        #buildbg{
+            position: absolute;
+            width: 640px;
+            height: 480px;
+            left: 0;
+            top: -45px;
+        }
+
+        /* 按钮 */
+        #button{ width: 640px; position: relative; margin: 0 auto; top: -57px; }
+        #orderStn{ position: absolute; left: 26%; bottom: 10px; }
+        #grillStn{ position: absolute; left: 43%; bottom: 10px; }
+        #buildStn{ position: absolute; left: 59%; bottom: 10px; }
+        #quit{ position:absolute; left: 2px; bottom: 12px; }
+        #next{ position: absolute; left: 570px; bottom: 12px; }
+
+        /* 开始界面 */
+        #head{
+            position: absolute;
+            width: 480px;
+            height: auto;
+            left: 80px;
+            top: 5%;
+        }
+        #playButton{
+            position: absolute;
+            left: 30%;
+            top: 70%;
+        }
+        #burger1{
+            position: absolute;
+            width: 120px;
+            height: auto;
+            left: 5%;
+            top: 60%;
+        }
+        #burger2{
+            position: absolute;
+            width: 180px;
+            height: auto;
+            left: 65%;
+            top: 55%;
+        }
+
+        /* 点单界面1 */
+        #cus1{
+            position: absolute;
+            width: 160px;
+            height: auto;
+            top: 30%;
+            animation-name: cusMove;
+            animation-duration: 2.5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes cusMove{
+            0%   { right: 0; }
+            100% { right: 60%; }
+        }
+        #tkod{
+            position: absolute;
+            top: 22%;
+            left: 22%;
+        }
+
+        /* 点单界面2 */
+        #cusorderCus{
+            position: absolute;
+            width: 160px;
+            height: auto;
+            top: 30%;
+            right: 180px;
+        }
+        #ordertips{
+            width: 640px;
+            position: absolute;
+            top: 0;
+        }
+        #ordertable{
+            position: absolute;
+            left: 0;
+            top: 187px;
+        }
+        #orderMan{
+            position: absolute;
+            left: 0;
+            height: auto;
+            top: 40%;
+        }
+        #dialog{
+            width: auto;
+            height: 80px;
+            position: absolute;
+            top: 170px;
+            right: 310px;
+        }
+        #ticket, #ticket_{
+            width: 120px;
+            height: 240px;
+            position: absolute;
+            top: 11px;
+            right: 19px;
+        }
+        #ticketBurgertop{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ticketBurgertopMove;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ticketBurgertopMove{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 104px; right: 64px; }
+        }
+        #ingredient1{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ingredient1Move;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ingredient1Move{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 125px; right: 64px; }
+        }
+        #ingredient2{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ingredient2Move;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ingredient2Move{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 146px; right: 64px; }
+        }
+        #ingredient3{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ingredient3Move;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ingredient3Move{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 167px; right: 64px; }
+        }
+        #ingredient4{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ingredient4Move;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ingredient4Move{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 188px; right: 64px; }
+        }
+        #ingredient5{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ingredient5Move;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ingredient5Move{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 209px; right: 64px; }
+        }
+        #ticketBurgerbtm{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            z-index: 3;
+            animation-name: ticketBurgerbtmMove;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ticketBurgerbtmMove{
+            0%   { top: 200px; right: 360px; }
+            100% { top: 230px; right: 64px; }
+        }
+
+        /* 烤肉界面 */
+        #somemeat{
+            position: absolute;
+            bottom: 10px;
+        }
+        #meats li{
+            list-style-type: none;
+            position: absolute;
+            animation-name: meatsliMove;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes meatsliMove{
+            100%   { top: 310px; left: 10px; }
+        }
+        #meatPosition li{
+            list-style-type: none;
+            position: absolute;
+            z-index: 2;
+        }
+        #meatJuice li{
+            list-style-type: none;
+            position: absolute;
+        }
+        #clock li{
+            list-style-type: none;
+            position: absolute;
+            z-index: 3;
+        }
+        #pointer li{
+            list-style-type: none;
+            position: absolute;
+            z-index: 4;
+            transform-origin: center 45%;
+        }
+        
+        /* 组装界面 */
+        /* 酱料瓶 */
+        #saucebottle{
+            position: absolute;
+            width: 200px;
+            left: 73%;
+            bottom: 20px;
+        }
+        #tmts{
+            position: absolute;
+            left: 0px;
+            bottom: 20px;
+        }
+        #tmtss li{
+            list-style-type: none;
+            position: absolute;
+            left: 0px;
+            bottom: 20px;
+        }
+        #mstds{
+            position: absolute;
+            left: 40px;
+            bottom: 20px;
+        }
+        #mstdss li{
+            list-style-type: none;
+            position: absolute;
+            left: 20%;
+            bottom: 20px;
+        }
+        #eggs{
+            position: absolute;
+            left: 40%;
+            bottom: 20px;
+        }
+        #eggss li{
+            list-style-type: none;
+            position: absolute;
+            left: 40%;
+            bottom: 20px;
+        }
+        #bbqs{
+            position: absolute;
+            left: 60%;
+            bottom: 20px;
+        }
+        #bbqss li{
+            list-style-type: none;
+            position: absolute;
+            left: 60%;
+            bottom: 20px;
+        }
+        /* 食材 */
+        #ingredient{
+            position: absolute;
+            height: 640px;
+            width: 200px;
+            left: 0;
+            top: 5px;
+        }
+        #tmt, #mstd, #egg, #bbq{
+            position: absolute;
+        }
+        #burgertop{
+            position: absolute;
+            left: 51px;
+            top: 5%;
+        }
+        #burgertops li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top: 5%;
+        }
+        #tomato{
+            position: absolute;
+            left: 51px;
+            top: 15%;
+        }
+        #tomatos li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top: 15%;
+        }
+        #veg{
+            position: absolute;
+            left: 51px;
+            top: 23%;
+        }
+        #vegs li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top: 23%;
+        }
+        #onion{
+            position: absolute;
+            left: 51px;
+            top:30%;
+        }
+        #onions li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top:30%;
+        }
+        #cucumber{
+            
+            position: absolute;
+            left: 51px;
+            top: 39%;
+        }
+        #cucumbers li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top: 39%;
+        }
+        #cheese{
+            position: absolute;
+            left: 51px;
+            top: 46%;
+        }
+        #cheeses li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top: 46%;
+        }
+        #burgerbtm{
+            position: absolute;
+            left: 51px;
+            top: 53%;
+        }
+        #burgerbtms li{
+            list-style-type: none;
+            position: absolute;
+            left: 51px;
+            top: 53%;
+        }
+        #meatfired{
+            position: absolute;
+            left: 180px;
+            top: 53%;
+        }
+        #meatfireds li{
+            list-style-type: none;
+            position: absolute;
+            left: 180px;
+            top: 53%;
+        }
+        /* 汉堡 */
+        #burger li{
+            list-style-type: none;
+            position: absolute;
+            bottom: 10px;
+        }
+        /* 订单 */
+        #vacantticket{
+            width: 120px;
+            height: 240px;
+            position: absolute;
+            top: 11px;
+            right: 19px;
+        }
+        #buildingredient0{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 104px;
+            right: 64px;
+        }
+        #buildingredient1{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 125px;
+            right: 64px;
+        }
+        #buildingredient2{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 146px;
+            right: 64px;
+        }
+        #buildingredient3{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 167px;
+            right: 64px;
+        }
+        #buildingredient4{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 188px;
+            right: 64px;
+        }
+        #buildingredient5{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 209px;
+            right: 64px;
+        }
+        #buildingredient6{
+            width: auto;
+            height: 19px;
+            position: absolute;
+            top: 230px;
+            right: 64px;
+        }
+        /* 粘贴小票 */
+        #stickbg{
+            position: absolute;
+            width: 640px;
+            height: 480px;
+            left: 0;
+            top: 0;
+        }
+        #tickethere{
+            position: absolute;
+            left: 220px;
+            top: 270px;
+        }
+        #plate{
+            position: absolute;
+            left: 200px;
+            top: 300px;
+        }
+        /* 评价 */
+        #judgebg{
+            position: absolute;
+            width: 640px;
+            height: 480px;
+            left: 0;
+            top: 0;
+        }
+        #judgetb{
+            position: absolute;
+            left: 0;
+            top: 280px;
+        }
+        #judger1{
+            position: absolute;
+            height: 336px;
+            left: 280px;
+            top: 80px;   
+        }
+        #judgeman{
+            position: absolute;
+            height: 336px;
+            left: 0;
+            top: 97px;   
+        }
+        #money{
+            position: absolute;
+            height: 50px;
+            left: 450px;
+            top: 120px;  
+        }
+        #tips{
+            position: absolute;
+            height: 100px;
+            left: 410px;
+            top: 240px;
+        }
+        #coins{
+            position: absolute;
+            height: 250px;
+            left: 430px;
+            top: 0px;
+        }
+        #order{
+            position: absolute;
+            left: 100%;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="startcontainer">
+        <img src="../image/startbg.jpg" alt="" id="startbg" draggable="false">
+        <img src="../image/head.png" alt="" id="head" draggable="false">
+        <img src="../image/play.png" alt="" id="playButton" draggable="false">
+        <img src="../image/burger1.png" alt="" id="burger1" draggable="false">
+        <img src="../image/burger2.png" alt="" id="burger2" draggable="false">
+    </div>
+
+    <div id="ordercontainer">
+        <img src="../image/orderbg.jpg" alt="" id="orderbg" draggable="false">
+        <img src="../image/customer1.png" alt="" id="cus1" draggable="false">
+        <img src="../image/takeorder.png" alt="" id="tkod" draggable="false">
+    </div>
+
+    <div id="cuscontainer">
+        <img src="../image/tkodbg.png" alt="" id="cusorderbg" draggable="false">
+        <img src="../image/customer1.png" alt="" id="cusorderCus" draggable="false">
+        <img src="../image/ordertips.png" alt="" id="ordertips" draggable="false">
+        <img src="../image/ordertable.png" alt="" id="ordertable" draggable="false">
+        <img src="../image/orderMan.png" alt="" id="orderMan" draggable="false">
+        <img src="../image/dialog.png" alt="" id="dialog" draggable="false">
+        <img src="../image/ticket.png" alt="" id="ticket" draggable="false">
+        <img src="../image/burgertop.png" alt="" id="ticketBurgertop" draggable="false">
+        <img src="../image/burgertop.png" alt="" id="ingredient1" draggable="false">
+        <img src="../image/burgertop.png" alt="" id="ingredient2" draggable="false">
+        <img src="../image/burgertop.png" alt="" id="ingredient3" draggable="false">
+        <img src="../image/burgerbtm.png" alt="" id="ingredient4" draggable="false">
+        <img src="../image/burgerbtm.png" alt="" id="ingredient5" draggable="false">
+        <img src="../image/burgerbtm.png" alt="" id="ticketBurgerbtm" draggable="false">
+        <img src="../image/ticket.png" alt="" id="ticket_" draggable="false">
+    </div>
+
+    <div id="grillcontainer">
+        <img src="../image/grillbg.png" alt="" id="grillbg" draggable="false">
+        <img src="../image/somemeat.png" alt="" id="somemeat" draggable="false">
+        <ul id="meats"></ul>
+        <ul id="meatPosition">
+            <li id="meat0"></li> <li id="meat1"></li> <li id="meat2"></li>
+            <li id="meat3"></li> <li id="meat4"></li> <li id="meat5"></li>
+            <li id="meat6"></li> <li id="meat7"></li> <li id="meat8"></li>
+            <li id="meat9"></li> <li id="meat10"></li> <li id="meat11"></li>
+        </ul>
+        <ul id="meatJuice">
+            <li id="juice0"></li> <li id="juice1"></li> <li id="juice2"></li>
+            <li id="juice3"></li> <li id="juice4"></li> <li id="juice5"></li>
+            <li id="juice6"></li> <li id="juice7"></li> <li id="juice8"></li>
+            <li id="juice9"></li> <li id="juice10"></li> <li id="juice11"></li>
+        </ul>
+        <ul id="clock">
+            <li id="clock0"></li> <li id="clock1"></li> <li id="clock2"></li>
+            <li id="clock3"></li> <li id="clock4"></li> <li id="clock5"></li>
+            <li id="clock6"></li> <li id="clock7"></li> <li id="clock8"></li>
+            <li id="clock9"></li> <li id="clock10"></li> <li id="clock11"></li>
+        </ul>
+        <ul id="pointer">
+            <li id="pointer0"></li> <li id="pointer1"></li> <li id="pointer2"></li>
+            <li id="pointer3"></li> <li id="pointer4"></li> <li id="pointer5"></li>
+            <li id="pointer6"></li> <li id="pointer7"></li> <li id="pointer8"></li>
+            <li id="pointer9"></li> <li id="pointer10"></li> <li id="pointer11"></li>
+        </ul>
+    </div>
+
+    <div id="buildcontainer">
+        <img src="../image/buildbg.jpg" alt="" id="buildbg">
+        <ul id="burger"></ul>
+        <div id="stickticket">
+            <img src="../image/startbg.jpg" alt="" id="stickbg" draggable="false"> 
+            <img src="../image/plate.png" alt="" id="plate" draggable="false">
+            <img src="../image/tickethere.png" alt="" id="tickethere" draggable="false">
+        </div>
+        <div id="judge">         
+            <img src="../image/judgebg.jpg" alt="" id="judgebg" draggable="false">
+            <img src="../image/customer1.png" alt="" id="judger1" draggable="false"> 
+            <img src="../image/judgetable.png" alt="" id="judgetb" draggable="false">
+            <img src="../image/tips.png" alt="" id="tips" draggable="false">
+            <img src="../image/judgeman.png" alt="" id="judgeman" draggable="false">  
+            <img src="../image/money0.png" alt="" id="coins" draggable="false">
+            <img src="../image/money0.png" alt="" id="money" draggable="false">
+        </div>
+        <div id="order">
+            <img src="../image/ticket.png" alt="" id="vacantticket" draggable="false">
+            <img src="../image/burgertop.png" alt="" id="buildingredient0" draggable="false">
+            <img src="../image/burgertop.png" alt="" id="buildingredient1" draggable="false">
+            <img src="../image/burgertop.png" alt="" id="buildingredient2" draggable="false">
+            <img src="../image/burgertop.png" alt="" id="buildingredient3" draggable="false">
+            <img src="../image/burgerbtm.png" alt="" id="buildingredient4" draggable="false">
+            <img src="../image/burgerbtm.png" alt="" id="buildingredient5" draggable="false">
+            <img src="../image/burgerbtm.png" alt="" id="buildingredient6" draggable="false">
+        </div>
+        <div id="saucebottle">
+            <img src="../image/tmts.png" alt="" id="tmts" draggable="true">   
+            <img src="../image/mstds.png" alt="" id="mstds" draggable="true">        
+            <img src="../image/eggs.png" alt="" id="eggs" draggable="false">
+            <img src="../image/bbqs.png" alt="" id="bbqs" draggable="false">
+        </div>
+        <div id="ingredient">
+            <img src="../image/tmt.png" alt="" id="tmt" draggable="false">
+            <img src="../image/mstd.png" alt="" id="mstd" draggable="false">
+            <img src="../image/egg.png" alt="" id="egg" draggable="false">
+            <img src="../image/bbq.png" alt="" id="bbq" draggable="false">
+            <ul id="tmtss"></ul>
+            <ul id="mstdss"></ul>
+            <ul id="eggss"></ul>
+            <ul id="bbqss"></ul>
+            <img src="../image/burgertop.png" alt="" id="burgertop" draggable="false">
+            <ul id="burgertops"></ul>
+            <img src="../image/tomato.png" alt="" id="tomato" draggable="false">
+            <ul id="tomatos"></ul>
+            <img src="../image/veg.png" alt="" id="veg" draggable="false">
+            <ul id="vegs"></ul>
+            <img src="../image/onion.png" alt="" id="onion" draggable="false">
+            <ul id="onions"></ul>
+            <img src="../image/cucumber.png" alt="" id="cucumber" draggable="false">
+            <ul id="cucumbers"></ul>
+            <img src="../image/cheese.png" alt="" id="cheese" draggable="false">
+            <ul id="cheeses"></ul>
+            <img src="../image/burgerbtm.png" alt="" id="burgerbtm" draggable="false">
+            <ul id="burgerbtms"></ul>
+            <img src="../image/meat3.png" alt="" id="meatfired" draggable="false">
+            <ul id="meatfireds"></ul>
+        </div>
+    </div>
+
+    <div id="button">
+        <img src="../image/btnbg.png" alt="" id="btnbg" draggable="false">
+        <img src="../image/orderStn.png" alt="" id="orderStn" draggable="false">
+        <img src="../image/grillStn0.png" alt="" id="grillStn" draggable="false">
+        <img src="../image/buildStn0.png" alt="" id="buildStn" draggable="false">
+        <img src="../image/quit.png" alt="" id="quit" draggable="false">
+        <img src="../image/next0.png" alt="" id="next" draggable="false">
+    </div>
+</body>
+
+<script src="game.js"></script>
+<script src="orderscript.js"></script>
+<script src="grillscript.js"></script>
+<script src="buildscript.js"></script>
+</html>
