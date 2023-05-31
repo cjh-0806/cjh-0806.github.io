@@ -766,7 +766,7 @@ burgertop.onmousedown = function(e){
                         score = 5; //评分机制
                         for(var i = 0; i < list.length; ++i)
                         {
-                            alert(list[i].src+','+ingredients[ingredientsRandom[5 - i]]);
+                            //alert(list[i].src+','+ingredients[ingredientsRandom[5 - i]]);
                             if(i > 0 && i < list.length - 1 && score > 0 && 
                                 list[i].src != ingredients[ingredientsRandom[5 - i]])
                             {
