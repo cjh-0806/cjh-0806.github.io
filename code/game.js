@@ -163,4 +163,22 @@ quitBtn.onclick = function() {
     buildscreenMusic.pause();
     buttonclickMusic.play();
     titleMusic.play();
+
+    pageNo = 0;
+
+    //烤肉界面清空
+    for(var i = 0; i < meatli.length; ++i)
+        if(meatli[i].state != 0) {
+            meatli[i].style.display = 'none';
+            meatli[i].state = 0;
+            meatli[i].second = 0;
+            document.getElementById("meatImg"+String(i)).src = "image/meat1.png";
+            clearInterval(meatli[i].timeId);
+            juiceli[i].style.display = 'none';
+            pointerli[i].angle = 0;
+            pointerli[i].style.transform = `rotate(0deg)`;
+            cookedMeat = 0;
+            cookedMeatArr = [];
+            cookingMeat = 0;
+        }
 }
