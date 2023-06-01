@@ -46,8 +46,14 @@ var ingredientsRandom = [1,2,3,4,5];
 
 //开始游戏
 playBtn.onclick = function () {
+    nextBtn.src = "image/next0.png";
+    changePage = 0;
+    titleMusic.pause();
     doorchimeMusic.play();
     orderscreenMusic.play();
+    orderStn.src = "image/orderStn.png";
+    grillStn.src = "image/grillStn0.png";
+    buildStn.src = "image/buildStn0.png";
     //生成随机顾客
     CusRandom = parseInt(Math.round( Math.random() * 1000 ))%3;
     cus1.src = bodyBgs[CusRandom];
